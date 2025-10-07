@@ -30,7 +30,7 @@ const pathConfigs = [
 const server = createServer((req, res) => {
   const request_url = new URL(`http://${host}${req.url}`);
   const path = request_url.pathname;
-  console.log(`Żądanie: ${req.method} ${path}`);
+  console.log(`Request: ${req.method} ${path}`);
 
   let handled = false;
 
@@ -49,7 +49,7 @@ const server = createServer((req, res) => {
 
   if (!handled) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-    res.end("404 — Strona nie znaleziona\n");
+    res.end("Site not found!\n");
   }
 });
 
